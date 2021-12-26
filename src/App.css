@@ -2,10 +2,10 @@
 
 body {
   font-family: "Cairo", sans-serif;
-  color: #000000;
+  color: #fff;
   line-height: 1.7;
   font-size: 10px;
-  background-color: #dcdcdc;
+  background-color: #000000;
   box-sizing: border-box;
   margin: 0;
   padding: 0.3rem;
@@ -33,4 +33,16 @@ body {
 
 .date {
   font-weight: bold;
+}
+
+.button {
+  color: white;
+  border: none;
+  margin: 3px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  font-size: 25px;
 }

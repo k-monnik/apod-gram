@@ -1,43 +1,43 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import NavBar from "./NavBar";
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { fas fa-heart } from '@fortawesome/free-solid-svg-icons'
+
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
-//const element = <FontAwesomeIcon icon={fas fa-heart} />
+
+
 
 export default function NasaPhoto() {
-        const [photoData, setPhotoData] = useState(null);
+    const [photoData, setPhotoData] = useState(null);
 
-        useEffect (() => {
+    useEffect(() => {
 
-            fetchPhoto();
+        fetchPhoto();
 
-            async function fetchPhoto() {
-                const res = await fetch (
-                    `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
-                );
+        async function fetchPhoto() {
+            const res = await fetch(
+                `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
+            );
 
-                const data = await res.json();
+            const data = await res.json();
 
-                setPhotoData(data);
+            setPhotoData(data);
 
-                console.log(data);
-            }
-        }, []);
+            console.log(data);
+        }
+    }, []);
 
-        if (!photoData) return <div />
+    if (!photoData) return <div />
 
-        return (
-            <>
-                <NavBar />
-                <div className="nasa-photo">
-                    {photoData.media_type === "image" ? (
-                    <img src={photoData.url} alt={photoData.title} className="photo"/>
-                    ) : (
-                        <iframe
+    return (
+        <>
+            <NavBar />
+            <div className="nasa-photo">
+                {photoData.media_type === "image" ? (
+                    <img src={photoData.url} alt={photoData.title} className="photo" />
+                ) : (
+                    <iframe
                         title="space-video"
                         src={photoData.url}
                         frameBorder="0"
@@ -45,21 +45,16 @@ export default function NasaPhoto() {
                         allow="encrypted-media"
                         allowFullScreen
                         className="photo"
-                        />
-                    )}
-                    <div>
-                        <h1>{photoData.title}</h1>
-                        <p className="date">{photoData.date}</p>
-                        <p className="explanation">{photoData.explanation}</p>
-                    </div>
-
-                    <div className="button">
-                     {/*TO-DO*/}
-
-                    </div>
-
-
+                    />
+                )}
+                <div>
+                    <h1>{photoData.title}</h1>
+                    <p className="date">{photoData.date}</p>
+                    <p className="explanation">{photoData.explanation}</p>
                 </div>
-            </>
-        )
+
+
+            </div>
+        </>
+    )
 }
