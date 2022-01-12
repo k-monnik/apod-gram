@@ -9,6 +9,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0.3rem;
+
 }
 
 /* header bar */
@@ -35,14 +36,28 @@ body {
   font-weight: bold;
 }
 
-.button {
+/* .button {
   color: white;
   border: none;
   margin: 3px;
-  font-size: 20px;
+  font-size: 10px;
   cursor: pointer;
 }
 
 .button:hover {
   font-size: 25px;
+} */
+
+.btn-red {
+  font-size: 3px;
+  background: #000;
+  overflow: hidden;
+  border: none;
+  color: red;
+  cursor: pointer;
 }
+
+.btn-red:hover {
+  font-size: 4px;
+}
+

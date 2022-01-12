@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import NavBar from "./NavBar";
+import Button from './Button';
 
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
@@ -51,6 +52,9 @@ export default function NasaPhoto() {
                     <h1>{photoData.title}</h1>
                     <p className="date">{photoData.date}</p>
                     <p className="explanation">{photoData.explanation}</p>
+                </div>
+                <div>
+                    <Button />
                 </div>
 
 
