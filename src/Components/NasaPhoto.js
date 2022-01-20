@@ -34,7 +34,7 @@ export default function NasaPhoto() {
     return (
         <>
             <NavBar />
-            <div className="nasa-photo">
+            <div className="card">
                 {photoData.media_type === "image" ? (
                     <img src={photoData.url} alt={photoData.title} className="photo" />
                 ) : (
@@ -49,7 +49,7 @@ export default function NasaPhoto() {
                     />
                 )}
                 <div>
-                    <h1>{photoData.title}</h1>
+                    <h1 className="title">{photoData.title}</h1>
                     <p className="date">{photoData.date}</p>
                     <p className="explanation">{photoData.explanation}</p>
                 </div>
