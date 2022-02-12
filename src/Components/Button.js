@@ -6,7 +6,7 @@ class Button extends Component {
     constructor() {
         super();
         this.state = {
-            liked: false
+            liked: true
         };
         this.handleClick = this.handleClick.bind(this);
     }
